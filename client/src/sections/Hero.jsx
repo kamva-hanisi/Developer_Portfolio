@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 
 function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 bg-slate-950">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-6 bg-slate-950"
+    >
       <div className="max-w-4xl text-center">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}

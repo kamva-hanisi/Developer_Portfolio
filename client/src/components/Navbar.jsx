@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { Link } from "react-scroll";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,17 +12,41 @@ function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-gray-300 font-medium">
-          <li className="hover:text-white transition cursor-pointer">Home</li>
+          <Link
+            to="home"
+            smooth={true}
+            duration={500}
+            className="hover:text-white transition cursor-pointer"
+          >
+            Home
+          </Link>
 
-          <li className="hover:text-white transition cursor-pointer">About</li>
+          <Link
+            to="about"
+            smooth={true}
+            duration={500}
+            className="hover:text-white transition cursor-pointer"
+          >
+            About
+          </Link>
 
-          <li className="hover:text-white transition cursor-pointer">
+          <Link
+            to="projects"
+            smooth={true}
+            duration={500}
+            className="hover:text-white transition cursor-pointer"
+          >
             Projects
-          </li>
+          </Link>
 
-          <li className="hover:text-white transition cursor-pointer">
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            className="hover:text-white transition cursor-pointer"
+          >
             Contact
-          </li>
+          </Link>
         </ul>
 
         {/* Mobile Button */}
