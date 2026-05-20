@@ -2,32 +2,45 @@ const projects = [
   {
     title: "Task Manager",
     description:
-      "Task management application with authentication and dashboard.",
+      "Task management application with authentication, dashboards, and task tracking.",
     tech: ["React", "Node.js", "Express", "PostgreSQL"],
+    github: "#",
+    live: "#",
   },
 
   {
     title: "Expense Tracker",
-    description: "Track income and expenses with charts and analytics.",
+    description:
+      "Track income and expenses with analytics and financial dashboards.",
     tech: ["React", "Redux", "PostgreSQL"],
+    github: "#",
+    live: "#",
   },
 
   {
     title: "Weather App",
-    description: "Weather forecasting application using real-time API data.",
-    tech: ["React", "API", "Tailwind"],
+    description:
+      "Modern weather forecasting app using real-time API integration.",
+    tech: ["React", "Tailwind", "API"],
+    github: "#",
+    live: "#",
   },
 
   {
     title: "Driving School App",
-    description: "Driving school booking and student management system.",
-    tech: ["React", "Node.js", "Express", "PostgreSQL"],
+    description: "Driving lesson booking and student management platform.",
+    tech: ["React", "Express", "PostgreSQL"],
+    github: "#",
+    live: "#",
   },
 
   {
     title: "NestWise Properties",
-    description: "Modern property listing platform with responsive UI.",
-    tech: ["React", "Express", "PostgreSQL"],
+    description:
+      "Property listing platform with responsive modern UI and authentication.",
+    tech: ["React", "Node.js", "PostgreSQL"],
+    github: "#",
+    live: "#",
   },
 ];
 
