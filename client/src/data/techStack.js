@@ -107,13 +107,22 @@ const techStack = [
   },
 ];
 
-export const education = {
-  school: "ALX Africa",
-  program: "Software Engineering",
-  period: "2023 - 2024",
-  credential: "Certificate",
-  certificateUrl: "https://www.alxafrica.com/",
-  logo: "/ALX_Africa.svg",
-};
+export const education = [
+  {
+    school: "ALX Africa",
+    program: "Software Engineering",
+    period: "2023 - 2024",
+    credential: "Certificate",
+    certificateUrl:
+      "https://drive.google.com/file/d/1BR8bsVK33j-f_OVJel8-Uxojqr_FLo06/view?usp=sharing",
+    logo: "/ALX-promotion.jpeg",
+  },
+  {
+    school: "Richard Varha High",
+    program: "School",
+    period: "2015 - 2020",
+    logo: "/School.svg",
+  },
+];
 
 export default techStack;

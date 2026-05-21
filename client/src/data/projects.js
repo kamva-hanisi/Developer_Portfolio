@@ -3,8 +3,8 @@
 import taskManager from "../assets/Task-Manager.png";
 import expenseTracker from "./../assets/Expense_Tracker.png";
 import weatherApp from "../assets/weather.png";
-import drivingSchool from "../assets/Driving_School.svg";
-import nestwise from "../assets/NestWise_Properties.svg";
+import drivingSchool from "../assets/Driving.png";
+import nestwise from "../assets/NestWise.png";
 
 const projects = [
   {

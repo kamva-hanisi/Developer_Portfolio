@@ -87,62 +87,80 @@ function TechStack() {
             <h2 className="text-4xl md:text-5xl font-bold">Education</h2>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="
-              bg-white/5
-              backdrop-blur-lg
-              border border-white/10
-              rounded-3xl
-              p-5
-              md:p-6
-              hover:border-cyan-400
-              transition-all
-              duration-300
-            "
-          >
-            <div className="max-w-md mx-auto flex flex-col items-center text-center gap-4">
-              <img
-                src={education.logo}
-                alt={`${education.school} logo`}
-                className="w-14 h-14 rounded-full object-cover border border-cyan-400/30 bg-slate-800"
-              />
-
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold">
-                  {education.program}
-                </h3>
-                <p className="text-gray-400 mt-1 text-sm md:text-base">
-                  {education.school} | {education.period}
-                </p>
-              </div>
-
-              <a
-                href={education.certificateUrl}
-                target="_blank"
-                rel="noreferrer"
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+            {education.map((item, index) => (
+              <motion.div
+                key={`${item.school}-${item.period}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
                 className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  bg-cyan-500
-                  hover:bg-cyan-600
-                  px-5
-                  py-2
-                  rounded-2xl
-                  font-semibold
-                  text-sm
-                  transition
-                  shadow-lg
-                  shadow-cyan-500/20
+                  bg-white/5
+                  backdrop-blur-lg
+                  border border-white/10
+                  rounded-3xl
+                  p-6
+                  md:p-8
+                  hover:border-cyan-400
+                  transition-all
+                  duration-300
                 "
               >
-                {education.credential}
-              </a>
-            </div>
-          </motion.div>
+                <div
+                  className="
+                    w-full
+                    flex
+                    flex-col
+                    items-center
+                    text-center
+                    gap-4
+                    py-2
+                  "
+                >
+                  <img
+                    src={item.logo}
+                    alt={`${item.school} logo`}
+                    className="w-14 h-14 rounded-full object-contain p-1 border border-cyan-400/30 bg-slate-800"
+                  />
+
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold">
+                      {item.program}
+                    </h3>
+                    <p className="text-gray-400 mt-1 text-sm md:text-base">
+                      {item.school} | {item.period}
+                    </p>
+                  </div>
+
+                  {item.certificateUrl && (
+                    <a
+                      href={item.certificateUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="
+                        inline-flex
+                        items-center
+                        justify-center
+                        bg-cyan-500
+                        hover:bg-cyan-600
+                        px-5
+                        py-2
+                        rounded-2xl
+                        font-semibold
+                        text-sm
+                        transition
+                        shadow-lg
+                        shadow-cyan-500/20
+                        mt-1
+                      "
+                    >
+                      {item.credential}
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
