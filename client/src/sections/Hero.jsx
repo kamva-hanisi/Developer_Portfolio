@@ -16,7 +16,7 @@ function Hero() {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-bold leading-tight"
         >
-          Hi, I'm <span className="text-cyan-400">Lucas</span>
+          Hi, I'm <span className="text-cyan-400">Kamva Hanisi</span>
         </motion.h1>
 
         <motion.p
@@ -25,8 +25,8 @@ function Hero() {
           transition={{ duration: 1 }}
           className="mt-6 text-gray-400 text-lg md:text-xl leading-relaxed"
         >
-          Full-Stack Developer specializing in React, Node.js, Express.js, and
-          PostgreSQL.
+          Full-Stack Developer specializing in React, JavaScript, Node.js,
+          Express.js, and PostgreSQL.
         </motion.p>
 
         <motion.div

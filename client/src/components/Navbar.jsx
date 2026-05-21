@@ -19,9 +19,14 @@ function Navbar() {
           to="home"
           smooth={true}
           duration={500}
-          className="text-2xl font-bold text-white cursor-pointer"
+          className="cursor-pointer"
+          aria-label="Kamva.dev home"
         >
-          Lucas.dev
+          <img
+            src="/Logo.png"
+            alt="Kamva Full-Stack"
+            className="h-10 md:h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Menu */}

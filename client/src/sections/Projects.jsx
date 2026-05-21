@@ -3,6 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
 import projects from "../data/projects";
+import { skillIcons } from "../data/techStack";
 
 function Projects() {
   return (
@@ -97,21 +98,35 @@ function Projects() {
 
               {/* Tech */}
               <div className="flex flex-wrap gap-3 mt-auto">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="
-                      bg-cyan-500/10
-                      text-cyan-300
-                      border border-cyan-500/20
-                      px-4 py-2
-                      rounded-xl
-                      text-sm
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {project.tech.map((tech) => {
+                  const skill = skillIcons[tech];
+                  const Icon = skill?.icon;
+
+                  return (
+                    <span
+                      key={tech}
+                      className="
+                        bg-cyan-500/10
+                        text-cyan-300
+                        border border-cyan-500/20
+                        px-4 py-2
+                        rounded-xl
+                        text-sm
+                        inline-flex
+                        items-center
+                        gap-2
+                      "
+                    >
+                      {Icon && (
+                        <Icon
+                          className="text-base shrink-0"
+                          style={{ color: skill.color }}
+                        />
+                      )}
+                      {tech}
+                    </span>
+                  );
+                })}
               </div>
             </motion.div>
           ))}
