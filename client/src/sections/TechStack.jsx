@@ -21,12 +21,12 @@ function TechStack() {
 
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {techStack.map((tech, index) => {
+          {techStack.map((tech) => {
             const Icon = tech.icon;
 
             return (
               <motion.div
-                key={index}
+                key={tech.name}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
@@ -48,6 +48,8 @@ function TechStack() {
                   hover:border-cyan-400
                   transition-all
                   duration-300
+                  min-h-40
+                  text-center
                 "
               >
                 <Icon className="text-5xl text-cyan-400" />

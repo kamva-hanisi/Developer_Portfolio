@@ -5,37 +5,10 @@ import { FiExternalLink } from "react-icons/fi";
 import projects from "../data/projects";
 
 function Projects() {
-  const featuredProject = projects[0] || {};
-
   return (
     <section id="projects" className="py-24 px-6 bg-slate-950">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <div className="relative overflow-hidden rounded-2xl mb-6">
-            <img
-              src={featuredProject.image}
-              alt={featuredProject.title}
-              className="
-      w-full
-      h-56
-      object-cover
-      hover:scale-110
-      transition-transform
-      duration-500
-    "
-            />
-
-            <div
-              className="
-      absolute
-      inset-0
-      bg-gradient-to-t
-      from-slate-950/80
-      to-transparent
-    "
-            ></div>
-          </div>
-
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -45,10 +18,10 @@ function Projects() {
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+          {projects.map((project) => (
             <motion.div
-              key={index}
+              key={project.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -66,17 +39,41 @@ function Projects() {
                 transition-all
                 duration-300
                 shadow-lg
+                flex
+                flex-col
+                overflow-hidden
               "
             >
+              {project.image && (
+                <div className="relative overflow-hidden rounded-2xl mb-6 bg-slate-800">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="
+                      w-full
+                      h-48
+                      object-cover
+                      hover:scale-110
+                      transition-transform
+                      duration-500
+                    "
+                  />
+                </div>
+              )}
+
               {/* Top */}
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold">{project.title}</h3>
+              <div className="flex items-center justify-between gap-4 mb-6">
+                <h3 className="text-2xl font-bold leading-tight">
+                  {project.title}
+                </h3>
 
                 <div className="flex gap-4 text-xl">
                   <a
                     href={project.github}
                     target="_blank"
+                    rel="noreferrer"
                     className="hover:text-cyan-400 transition"
+                    aria-label={`${project.title} GitHub repository`}
                   >
                     <FaGithub />
                   </a>
@@ -84,7 +81,9 @@ function Projects() {
                   <a
                     href={project.live}
                     target="_blank"
+                    rel="noreferrer"
                     className="hover:text-cyan-400 transition"
+                    aria-label={`${project.title} live project`}
                   >
                     <FiExternalLink />
                   </a>
@@ -97,10 +96,10 @@ function Projects() {
               </p>
 
               {/* Tech */}
-              <div className="flex flex-wrap gap-3">
-                {project.tech.map((tech, i) => (
+              <div className="flex flex-wrap gap-3 mt-auto">
+                {project.tech.map((tech) => (
                   <span
-                    key={i}
+                    key={tech}
                     className="
                       bg-cyan-500/10
                       text-cyan-300

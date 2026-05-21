@@ -1,5 +1,10 @@
 import nodemailer from "nodemailer";
 
+const isEmailConfigured = () =>
+  process.env.EMAIL_USER &&
+  process.env.EMAIL_PASS &&
+  process.env.EMAIL_PASS !== "paste_your_google_app_password_here";
+
 export const sendEmail = async (req, res) => {
   try {
     const { name, email, message } = req.body;
@@ -11,7 +16,7 @@ export const sendEmail = async (req, res) => {
       });
     }
 
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    if (!isEmailConfigured()) {
       return res.status(500).json({
         success: false,
         message: "Email is not configured on the server.",

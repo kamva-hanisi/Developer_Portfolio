@@ -1,12 +1,10 @@
 // import taskManager from "../assets/projects/task-manager.png";
 
-// import expenseTracker from "../assets/projects/expense-tracker.png";
-
-// import weatherApp from "../assets/projects/weather-app.png";
-
-// import drivingSchool from "../assets/projects/driving-school.png";
-
-// import nestwise from "../assets/projects/nestwise.png";
+import taskManager from "../assets/Task_Manager.svg";
+import expenseTracker from "./../assets/Expense_Tracker.png";
+import weatherApp from "../assets/Weather_App.svg";
+import drivingSchool from "../assets/Driving_School.svg";
+import nestwise from "../assets/NestWise_Properties.svg";
 
 const projects = [
   {
@@ -15,7 +13,7 @@ const projects = [
     description:
       "Task management application with authentication, dashboards, and task tracking.",
 
-    // image: taskManager,
+    image: taskManager,
 
     tech: ["React", "Node.js", "Express", "PostgreSQL"],
 
@@ -30,7 +28,7 @@ const projects = [
     description:
       "Track income and expenses with analytics and financial dashboards.",
 
-    // image: expenseTracker,
+    image: expenseTracker,
 
     tech: ["React", "Redux", "PostgreSQL"],
 
@@ -45,7 +43,7 @@ const projects = [
     description:
       "Modern weather forecasting app using real-time API integration.",
 
-    // image: weatherApp,
+    image: weatherApp,
 
     tech: ["React", "Tailwind", "API"],
 
@@ -59,7 +57,7 @@ const projects = [
 
     description: "Driving lesson booking and student management platform.",
 
-    // image: drivingSchool,
+    image: drivingSchool,
 
     tech: ["React", "Express", "PostgreSQL"],
 
@@ -74,7 +72,7 @@ const projects = [
     description:
       "Property listing platform with responsive modern UI and authentication.",
 
-    // image: nestwise,
+    image: nestwise,
 
     tech: ["React", "Node.js", "PostgreSQL"],
 
