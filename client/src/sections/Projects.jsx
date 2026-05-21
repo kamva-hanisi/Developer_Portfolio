@@ -5,16 +5,45 @@ import { FiExternalLink } from "react-icons/fi";
 import projects from "../data/projects";
 
 function Projects() {
+  const featuredProject = projects[0] || {};
+
   return (
     <section id="projects" className="py-24 px-6 bg-slate-950">
       <div className="max-w-7xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-16"
-        >
-          Featured Projects
-        </motion.h2>
+        <div className="mb-16">
+          <div className="relative overflow-hidden rounded-2xl mb-6">
+            <img
+              src={featuredProject.image}
+              alt={featuredProject.title}
+              className="
+      w-full
+      h-56
+      object-cover
+      hover:scale-110
+      transition-transform
+      duration-500
+    "
+            />
+
+            <div
+              className="
+      absolute
+      inset-0
+      bg-gradient-to-t
+      from-slate-950/80
+      to-transparent
+    "
+            ></div>
+          </div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-bold text-center"
+          >
+            Featured Projects
+          </motion.h2>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -23,7 +52,10 @@ function Projects() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              whileHover={{ y: -10 }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+              }}
               className="
                 bg-white/5
                 backdrop-blur-lg

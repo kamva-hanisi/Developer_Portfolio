@@ -5,6 +5,7 @@ import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import TechStack from "./sections/TechStack";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <Hero />
 
       <About />
+
+      <TechStack />
 
       <Projects />
 
