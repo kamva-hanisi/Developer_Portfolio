@@ -1,8 +1,8 @@
 // import taskManager from "../assets/projects/task-manager.png";
 
-import taskManager from "../assets/Task_Manager.svg";
+import taskManager from "../assets/Task-Manager.png";
 import expenseTracker from "./../assets/Expense_Tracker.png";
-import weatherApp from "../assets/Weather_App.svg";
+import weatherApp from "../assets/weather.png";
 import drivingSchool from "../assets/Driving_School.svg";
 import nestwise from "../assets/NestWise_Properties.svg";
 
@@ -17,9 +17,9 @@ const projects = [
 
     tech: ["React", "Node.js", "Express", "PostgreSQL"],
 
-    github: "#",
+    github: "https://github.com/kamva-hanisi/Task-Mananger.git",
 
-    live: "#",
+    live: "https://task-mananger-client.onrender.com",
   },
 
   {
@@ -32,7 +32,7 @@ const projects = [
 
     tech: ["React", "Redux", "PostgreSQL"],
 
-    github: "#",
+    github: "https://github.com/kamva-hanisi/Expense-Tracker-App.git",
 
     live: "#",
   },
@@ -47,7 +47,7 @@ const projects = [
 
     tech: ["React", "Tailwind", "API"],
 
-    github: "#",
+    github: "https://github.com/kamva-hanisi/weather.git",
 
     live: "#",
   },
