@@ -1,5 +1,3 @@
-// import taskManager from "../assets/projects/task-manager.png";
-
 import taskManager from "../assets/Task-Manager.png";
 import expenseTracker from "./../assets/Expense_Tracker.png";
 import weatherApp from "../assets/weather.png";
@@ -61,7 +59,7 @@ const projects = [
 
     tech: ["React", "Express", "PostgreSQL"],
 
-    github: "#",
+    github: "https://github.com/kamva-hanisi/driving-school-app.git",
 
     live: "#",
   },
@@ -76,7 +74,7 @@ const projects = [
 
     tech: ["React", "Node.js", "PostgreSQL"],
 
-    github: "#",
+    github: "https://github.com/kamva-hanisi/NestWise-Properties.git",
 
     live: "#",
   },
