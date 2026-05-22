@@ -13,16 +13,18 @@ dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 const app = express();
 
+const normalizeOrigin = (origin) => origin?.replace(/\/$/, "");
+
 const allowedOrigins = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
-  process.env.CLIENT_URL,
+  normalizeOrigin(process.env.CLIENT_URL),
 ].filter(Boolean);
 
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin || allowedOrigins.includes(normalizeOrigin(origin))) {
         callback(null, true);
         return;
       }
