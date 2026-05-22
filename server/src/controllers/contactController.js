@@ -1,9 +1,14 @@
 import nodemailer from "nodemailer";
 
+const getEmailUser = () => process.env.EMAIL_USER?.trim();
+const getEmailPassword = () => process.env.EMAIL_PASS?.replace(/\s/g, "");
+const getWeb3FormsKey = () => process.env.WEB3FORMS_ACCESS_KEY?.trim();
+
 const isEmailConfigured = () =>
-  process.env.EMAIL_USER?.trim() &&
-  process.env.EMAIL_PASS?.trim() &&
-  process.env.EMAIL_PASS.trim() !== "paste_your_google_app_password_here";
+  getWeb3FormsKey() ||
+  (getEmailUser() &&
+    getEmailPassword() &&
+    getEmailPassword() !== "paste_your_google_app_password_here");
 
 const getEmailErrorMessage = (error) => {
   if (error.code === "EAUTH" || error.responseCode === 535) {
@@ -19,6 +24,68 @@ const getEmailErrorMessage = (error) => {
   }
 
   return "Failed to send email. Please check the server email settings.";
+};
+
+const sendWithWeb3Forms = async ({ name, email, message }) => {
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      access_key: getWeb3FormsKey(),
+      subject: `Portfolio Contact from ${name}`,
+      from_name: "Portfolio Contact Form",
+      name,
+      email,
+      message,
+    }),
+  });
+
+  const result = await response.json().catch(() => ({}));
+
+  if (!response.ok || result.success === false) {
+    throw new Error(result.message || "Web3Forms failed to send email.");
+  }
+
+  return result;
+};
+
+const sendWithGmail = async ({ name, email, message }) => {
+  const emailUser = getEmailUser();
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 15000,
+
+    auth: {
+      user: emailUser,
+      pass: getEmailPassword(),
+    },
+  });
+
+  const mailOptions = {
+    from: `"Portfolio Contact" <${emailUser}>`,
+
+    to: emailUser,
+
+    replyTo: email,
+
+    subject: `Portfolio Contact from ${name}`,
+
+    text: `
+        Name: ${name}
+        Email: ${email}
+
+        Message:
+        ${message}
+      `,
+  };
+
+  await transporter.sendMail(mailOptions);
 };
 
 export const sendEmail = async (req, res) => {
@@ -39,37 +106,11 @@ export const sendEmail = async (req, res) => {
       });
     }
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      connectionTimeout: 10000,
-      greetingTimeout: 10000,
-      socketTimeout: 15000,
-
-      auth: {
-        user: process.env.EMAIL_USER.trim(),
-        pass: process.env.EMAIL_PASS.replace(/\s/g, ""),
-      },
-    });
-
-    const mailOptions = {
-      from: `"Portfolio Contact" <${process.env.EMAIL_USER.trim()}>`,
-
-      to: process.env.EMAIL_USER.trim(),
-
-      replyTo: email,
-
-      subject: `Portfolio Contact from ${name}`,
-
-      text: `
-        Name: ${name}
-        Email: ${email}
-
-        Message:
-        ${message}
-      `,
-    };
-
-    await transporter.sendMail(mailOptions);
+    if (getWeb3FormsKey()) {
+      await sendWithWeb3Forms({ name, email, message });
+    } else {
+      await sendWithGmail({ name, email, message });
+    }
 
     res.status(200).json({
       success: true,

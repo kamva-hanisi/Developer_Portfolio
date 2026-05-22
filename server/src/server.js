@@ -65,6 +65,11 @@ app.get("/api/config", (req, res) => {
   res.status(200).json({
     success: true,
     emailConfigured: Boolean(
+      process.env.WEB3FORMS_ACCESS_KEY?.trim() ||
+        (process.env.EMAIL_USER?.trim() && process.env.EMAIL_PASS?.trim())
+    ),
+    web3FormsConfigured: Boolean(process.env.WEB3FORMS_ACCESS_KEY?.trim()),
+    gmailConfigured: Boolean(
       process.env.EMAIL_USER?.trim() && process.env.EMAIL_PASS?.trim()
     ),
     clientUrl: normalizeOrigin(process.env.CLIENT_URL),
