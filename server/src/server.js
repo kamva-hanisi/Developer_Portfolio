@@ -13,11 +13,22 @@ dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 const app = express();
 
-const normalizeOrigin = (origin) => origin?.replace(/\/$/, "");
+const normalizeOrigin = (origin) => {
+  if (!origin) {
+    return undefined;
+  }
+
+  try {
+    return new URL(origin).origin;
+  } catch {
+    return origin.replace(/\/$/, "");
+  }
+};
 
 const allowedOrigins = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
+  "https://kamva-hanisi.github.io",
   normalizeOrigin(process.env.CLIENT_URL),
 ].filter(Boolean);
 
@@ -35,6 +46,20 @@ app.use(
 );
 
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Portfolio API is running",
+  });
+});
+
+app.get("/api/health", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "OK",
+  });
+});
 
 app.use("/api/contact", contactRoutes);
 

@@ -1,9 +1,9 @@
 import nodemailer from "nodemailer";
 
 const isEmailConfigured = () =>
-  process.env.EMAIL_USER &&
-  process.env.EMAIL_PASS &&
-  process.env.EMAIL_PASS !== "paste_your_google_app_password_here";
+  process.env.EMAIL_USER?.trim() &&
+  process.env.EMAIL_PASS?.trim() &&
+  process.env.EMAIL_PASS.trim() !== "paste_your_google_app_password_here";
 
 export const sendEmail = async (req, res) => {
   try {
@@ -25,17 +25,20 @@ export const sendEmail = async (req, res) => {
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 15000,
 
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.EMAIL_USER.trim(),
+        pass: process.env.EMAIL_PASS.replace(/\s/g, ""),
       },
     });
 
     const mailOptions = {
-      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+      from: `"Portfolio Contact" <${process.env.EMAIL_USER.trim()}>`,
 
-      to: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER.trim(),
 
       replyTo: email,
 
@@ -61,7 +64,8 @@ export const sendEmail = async (req, res) => {
 
     res.status(500).json({
       success: false,
-      message: "Failed to send email",
+      message:
+        "Failed to send email. Please check the server email settings.",
     });
   }
 };

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { Link } from "react-scroll";
 
+const assetPath = (fileName) => `${import.meta.env.BASE_URL}${fileName}`;
+
 const links = [
   { label: "Home", to: "home" },
   { label: "About", to: "about" },
@@ -23,7 +25,7 @@ function Navbar() {
           aria-label="Kamva.dev home"
         >
           <img
-            src="/Logo.png"
+            src={assetPath("Logo.png")}
             alt="Kamva Full-Stack"
             className="h-10 md:h-12 w-auto"
           />
