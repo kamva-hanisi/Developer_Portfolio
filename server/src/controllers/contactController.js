@@ -5,6 +5,22 @@ const isEmailConfigured = () =>
   process.env.EMAIL_PASS?.trim() &&
   process.env.EMAIL_PASS.trim() !== "paste_your_google_app_password_here";
 
+const getEmailErrorMessage = (error) => {
+  if (error.code === "EAUTH" || error.responseCode === 535) {
+    return "Gmail rejected the email login. Check EMAIL_USER and EMAIL_PASS on Render.";
+  }
+
+  if (
+    error.code === "ETIMEDOUT" ||
+    error.code === "ECONNECTION" ||
+    error.code === "ESOCKET"
+  ) {
+    return "The email service timed out. Try again, then check Render logs if it continues.";
+  }
+
+  return "Failed to send email. Please check the server email settings.";
+};
+
 export const sendEmail = async (req, res) => {
   try {
     const { name, email, message } = req.body;
@@ -64,8 +80,7 @@ export const sendEmail = async (req, res) => {
 
     res.status(500).json({
       success: false,
-      message:
-        "Failed to send email. Please check the server email settings.",
+      message: getEmailErrorMessage(error),
     });
   }
 };

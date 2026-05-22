@@ -61,6 +61,17 @@ app.get("/api/health", (req, res) => {
   });
 });
 
+app.get("/api/config", (req, res) => {
+  res.status(200).json({
+    success: true,
+    emailConfigured: Boolean(
+      process.env.EMAIL_USER?.trim() && process.env.EMAIL_PASS?.trim()
+    ),
+    clientUrl: normalizeOrigin(process.env.CLIENT_URL),
+    allowedOrigins,
+  });
+});
+
 app.use("/api/contact", contactRoutes);
 
 const PORT = process.env.PORT || 5000;
