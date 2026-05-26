@@ -12,3 +12,5 @@ services:
         sync: false
       - key: CLIENT_URL
         sync: false
+      - key: WEB3FORMS_ACCESS_KEY
+        sync: false

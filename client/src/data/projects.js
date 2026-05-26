@@ -32,7 +32,7 @@ const projects = [
 
     github: "https://github.com/kamva-hanisi/Expense-Tracker-App.git",
 
-    live: "#",
+    live: "https://expense-tracker-client-0ndu.onrender.com",
   },
 
   {

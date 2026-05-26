@@ -26,6 +26,8 @@ import {
 } from "react-icons/si";
 import { VscCopilot } from "react-icons/vsc";
 
+const publicAsset = (fileName) => `${import.meta.env.BASE_URL}${fileName}`;
+
 export const skillIcons = {
   API: { icon: FaCode, color: "#22d3ee" },
   Axios: { icon: SiAxios, color: "#5a29e4" },
@@ -115,13 +117,13 @@ export const education = [
     credential: "Certificate",
     certificateUrl:
       "https://drive.google.com/file/d/1BR8bsVK33j-f_OVJel8-Uxojqr_FLo06/view?usp=sharing",
-    logo: "/ALX-promotion.jpeg",
+    logo: publicAsset("ALX-promotion.jpeg"),
   },
   {
     school: "Richard Varha High",
     program: "School",
     period: "2015 - 2020",
-    logo: "/School.svg",
+    logo: publicAsset("School.svg"),
   },
 ];
 
