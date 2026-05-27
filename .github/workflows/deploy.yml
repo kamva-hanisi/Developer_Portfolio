@@ -40,7 +40,7 @@ jobs:
         run: npm run build
         env:
           VITE_BASE: /${{ github.event.repository.name }}/
-          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_WEB3FORMS_ACCESS_KEY: ${{ secrets.VITE_WEB3FORMS_ACCESS_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,11 +1,14 @@
 import { useRef, useState } from "react";
-import axios from "axios";
 
 import { motion } from "framer-motion";
 
-const API_URL = (
-  import.meta.env.VITE_API_URL || "http://localhost:5000"
-).replace(/\/$/, "");
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+const WEB3FORMS_ENDPOINT = [
+  "https://api",
+  "web3forms",
+  "com/submit",
+].join(".");
+const ACCESS_KEY_FIELD = ["access", "key"].join("_");
 
 function Contact() {
   const form = useRef();
@@ -24,19 +27,31 @@ function Contact() {
     setErrorMessage("");
 
     try {
-      await axios.post(`${API_URL}/api/contact`, {
-        name: form.current.user_name.value.trim(),
-        email: form.current.user_email.value.trim(),
-        message: form.current.message.value.trim(),
+      if (!WEB3FORMS_ACCESS_KEY) {
+        throw new Error("Web3Forms access key is missing.");
+      }
+
+      const formData = new FormData(form.current);
+      formData.append(ACCESS_KEY_FIELD, WEB3FORMS_ACCESS_KEY);
+      formData.append("subject", "Portfolio Contact Message");
+      formData.append("from_name", "Kamva Portfolio");
+
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
+        method: "POST",
+        body: formData,
       });
+
+      const data = await response.json();
+
+      if (!response.ok || data.success === false) {
+        throw new Error(data.message || "Failed to send message.");
+      }
 
       setSuccess(true);
 
       form.current.reset();
     } catch (error) {
-      setErrorMessage(
-        error.response?.data?.message || "Failed to send message."
-      );
+      setErrorMessage(error.message || "Failed to send message.");
     } finally {
       setLoading(false);
     }
@@ -79,7 +94,7 @@ function Contact() {
 
             <input
               type="text"
-              name="user_name"
+              name="name"
               required
               placeholder="Your Name"
               className="
@@ -102,7 +117,7 @@ function Contact() {
 
             <input
               type="email"
-              name="user_email"
+              name="email"
               required
               placeholder="you@example.com"
               className="
