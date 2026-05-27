@@ -11,6 +11,10 @@ const isEmailConfigured = () =>
     getEmailPassword() !== "paste_your_google_app_password_here");
 
 const getEmailErrorMessage = (error) => {
+  if (error.message?.startsWith("Web3Forms failed:")) {
+    return error.message;
+  }
+
   if (error.code === "EAUTH" || error.responseCode === 535) {
     return "Gmail rejected the email login. Check EMAIL_USER and EMAIL_PASS on Render.";
   }
@@ -46,7 +50,9 @@ const sendWithWeb3Forms = async ({ name, email, message }) => {
   const result = await response.json().catch(() => ({}));
 
   if (!response.ok || result.success === false) {
-    throw new Error(result.message || "Web3Forms failed to send email.");
+    throw new Error(
+      `Web3Forms failed: ${result.message || "Check WEB3FORMS_ACCESS_KEY on Render."}`
+    );
   }
 
   return result;
