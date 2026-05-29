@@ -61,7 +61,7 @@ const projects = [
 
     github: "https://github.com/kamva-hanisi/driving-school-app.git",
 
-    live: "#",
+    live: "https://driving-school-app-ando.onrender.com",
   },
 
   {

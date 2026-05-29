@@ -25,8 +25,9 @@ function Hero() {
           transition={{ duration: 1 }}
           className="mt-6 text-gray-400 text-lg md:text-xl leading-relaxed"
         >
-          Full-Stack Developer specializing in React, JavaScript, Node.js,
-          Express.js, and PostgreSQL.
+          Full-Stack Developer with experience building scalable,
+          production-ready web applications using React.js, JavaScript,
+          TypeScript, Node.js, Express.js, Redux, and PostgreSQL.
         </motion.p>
 
         <motion.div

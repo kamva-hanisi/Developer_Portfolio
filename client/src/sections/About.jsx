@@ -13,16 +13,20 @@ function About() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
 
           <p className="text-gray-400 leading-relaxed text-lg">
-            I'm a Full-Stack Developer passionate about building modern web
-            applications using React, Node.js, Express.js, and PostgreSQL. I
-            enjoy creating scalable backend systems, responsive frontend
-            interfaces, and clean UI/UX experiences.
+            I'm a Johannesburg-based Full-Stack Developer with experience
+            building scalable, production-ready web applications from the ground
+            up. I specialize in React.js, JavaScript, TypeScript, Node.js,
+            Express.js, Redux, Tailwind CSS, and PostgreSQL, with a strong
+            focus on clean user interfaces, RESTful APIs, database design, and
+            maintainable backend architecture.
           </p>
 
           <p className="text-gray-400 leading-relaxed text-lg mt-6">
-            I've built projects including task management systems, expense
-            trackers, weather apps, property platforms, and driving school
-            systems.
+            I have developed full-stack projects including a task management
+            application, an expense tracker, and a driving school booking
+            system. These projects include features such as authentication,
+            category-based dashboards, booking availability logic, PostgreSQL
+            data storage, API integration, and deployment on Render.
           </p>
         </motion.div>
 
