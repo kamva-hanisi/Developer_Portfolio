@@ -17,7 +17,7 @@ const projects = [
 
     github: "https://github.com/kamva-hanisi/Task-Mananger.git",
 
-    live: "https://task-mananger-client.onrender.com",
+    live: "https://kamva-hanisi.github.io/Task-Mananger/",
   },
 
   {
