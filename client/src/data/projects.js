@@ -32,7 +32,21 @@ const projects = [
 
     github: "https://github.com/kamva-hanisi/Expense-Tracker-App.git",
 
-    live: "https://expense-tracker-client-0ndu.onrender.com",
+    live: "https://kamva-hanisi.github.io/Expense-Tracker-App/",
+  },
+
+  {
+    title: "Driving School App",
+
+    description: "Driving lesson booking and student management platform.",
+
+    image: drivingSchool,
+
+    tech: ["React", "Express", "PostgreSQL"],
+
+    github: "https://github.com/kamva-hanisi/driving-school-app.git",
+
+    live: "https://kamva-hanisi.github.io/driving-school-app/",
   },
 
   {
@@ -48,20 +62,6 @@ const projects = [
     github: "https://github.com/kamva-hanisi/weather.git",
 
     live: "#",
-  },
-
-  {
-    title: "Driving School App",
-
-    description: "Driving lesson booking and student management platform.",
-
-    image: drivingSchool,
-
-    tech: ["React", "Express", "PostgreSQL"],
-
-    github: "https://github.com/kamva-hanisi/driving-school-app.git",
-
-    live: "https://driving-school-app-ando.onrender.com",
   },
 
   {
