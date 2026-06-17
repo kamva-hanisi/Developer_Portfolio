@@ -13,7 +13,15 @@ const projects = [
 
     image: taskManager,
 
-    tech: ["React", "Node.js", "Express", "PostgreSQL"],
+    tech: [
+      "React",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "SASS",
+      "PostgreSQL",
+      "CI/CD",
+    ],
 
     github: "https://github.com/kamva-hanisi/Task-Mananger.git",
 
@@ -28,7 +36,16 @@ const projects = [
 
     image: expenseTracker,
 
-    tech: ["React", "Redux", "PostgreSQL"],
+    tech: [
+      "React",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "tailwindcss",
+      "Redux",
+      "PostgreSQL",
+      "CI/CD",
+    ],
 
     github: "https://github.com/kamva-hanisi/Expense-Tracker-App.git",
 
@@ -42,7 +59,15 @@ const projects = [
 
     image: drivingSchool,
 
-    tech: ["React", "Express", "PostgreSQL"],
+    tech: [
+      "React",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "SASS",
+      "PostgreSQL",
+      "CI/CD",
+    ],
 
     github: "https://github.com/kamva-hanisi/driving-school-app.git",
 
@@ -57,7 +82,7 @@ const projects = [
 
     image: weatherApp,
 
-    tech: ["React", "Tailwind", "API"],
+    tech: ["React", "HTML", "CSS", "JavaScript", "API"],
 
     github: "https://github.com/kamva-hanisi/weather.git",
 
@@ -72,7 +97,15 @@ const projects = [
 
     image: nestwise,
 
-    tech: ["React", "Node.js", "PostgreSQL"],
+    tech: [
+      "React",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "SASS",
+      "MySQL",
+      "CI/CD",
+    ],
 
     github: "https://github.com/kamva-hanisi/NestWise-Properties.git",
 

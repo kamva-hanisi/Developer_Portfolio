@@ -16,8 +16,8 @@ function About() {
             I'm a Johannesburg-based Full-Stack Developer with experience
             building scalable, production-ready web applications from the ground
             up. I specialize in React.js, JavaScript, TypeScript, Node.js,
-            Express.js, Redux, Tailwind CSS, and PostgreSQL, with a strong
-            focus on clean user interfaces, RESTful APIs, database design, and
+            Express.js, Redux, Tailwind CSS, and PostgreSQL, with a strong focus
+            on clean user interfaces, RESTful APIs, database design, and
             maintainable backend architecture.
           </p>
 
@@ -26,7 +26,8 @@ function About() {
             application, an expense tracker, and a driving school booking
             system. These projects include features such as authentication,
             category-based dashboards, booking availability logic, PostgreSQL
-            data storage, API integration, and deployment on Render.
+            data storage, API integration, and deployment on Vercel, Neon and
+            Github.
           </p>
         </motion.div>
 
