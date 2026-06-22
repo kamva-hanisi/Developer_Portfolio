@@ -86,7 +86,7 @@ const projects = [
 
     github: "https://github.com/kamva-hanisi/weather.git",
 
-    live: "#",
+    live: "https://kamva-hanisi.github.io/weather/",
   },
 
   {
