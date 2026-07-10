@@ -15,8 +15,8 @@ function About() {
           <p className="text-gray-400 leading-relaxed text-lg">
             I'm a Johannesburg-based Full-Stack Developer with experience
             building scalable, production-ready web applications from the ground
-            up. I specialize in React.js, JavaScript, TypeScript, Node.js,
-            Express.js, Redux, Tailwind CSS, and PostgreSQL, with a strong focus
+            up. I specialize in React.js, Angular, Vue.js, JavaScript, TypeScript, Node.js,
+            Express.js, PHP, Laravel, Redux, Tailwind CSS, and PostgreSQL, with a strong focus
             on clean user interfaces, RESTful APIs, database design, and
             maintainable backend architecture.
           </p>

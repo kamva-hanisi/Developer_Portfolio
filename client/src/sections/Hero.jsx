@@ -26,8 +26,8 @@ function Hero() {
           className="mt-6 text-gray-400 text-lg md:text-xl leading-relaxed"
         >
           Full-Stack Developer with experience building scalable,
-          production-ready web applications using React.js, JavaScript,
-          TypeScript, Node.js, Express.js, Redux, and PostgreSQL.
+          production-ready web applications using React.js, Angular, Vue.js, Next.js,
+          TypeScript, Node.js, PHP, Laravel, Express.js, Redux, and PostgreSQL.
         </motion.p>
 
         <motion.div

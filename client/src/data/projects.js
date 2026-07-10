@@ -9,7 +9,7 @@ const projects = [
     title: "Task Manager",
 
     description:
-      "Task management application with authentication, dashboards, and task tracking.",
+      "Developed a full-stack task management platform featuring JWT authentication, CRUD operations, PostgreSQL data persistence, responsive design, RESTful APIs, and complete frontend-backend integration.",
 
     image: taskManager,
 
@@ -32,7 +32,7 @@ const projects = [
     title: "Expense Tracker",
 
     description:
-      "Track income and expenses with analytics and financial dashboards.",
+      "Developed a full-stack expense management application featuring secure authentication, interactive dashboards, category management, monthly summaries, Redux state management, RESTful APIs, and responsive user interfaces.",
 
     image: expenseTracker,
 
@@ -55,7 +55,8 @@ const projects = [
   {
     title: "Driving School App",
 
-    description: "Driving lesson booking and student management platform.",
+    description:
+      "Developed an online driving school booking platform featuring secure booking management, duplicate reservation prevention, RESTful APIs, PostgreSQL integration, and responsive user interfaces.",
 
     image: drivingSchool,
 
@@ -78,7 +79,7 @@ const projects = [
     title: "Weather App",
 
     description:
-      "Modern weather forecasting app using real-time API integration.",
+      "Developed a modern weather forecasting app using real-time API integration and responsive design.",
 
     image: weatherApp,
 
