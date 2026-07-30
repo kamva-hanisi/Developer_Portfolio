@@ -3,6 +3,8 @@ import expenseTracker from "./../assets/Expense_Tracker.png";
 import weatherApp from "../assets/weather.png";
 import drivingSchool from "../assets/Driving.png";
 import nestwise from "../assets/NestWise.png";
+import LeaveDesk from "../assets/LeaveDesk.png";
+import MiniCommerce from "../assets/Mini-E Commerce.png"
 
 const projects = [
   {
@@ -53,6 +55,29 @@ const projects = [
   },
 
   {
+    title: "Employee-Leave-Management-API",
+
+    description:
+      "Built a full-stack Employee Leave Management system with Laravel 12, Laravel Sanctum, MySQL, React, and SASS. The project includes secure token authentication, employee management, leave type management, leave applications, approval/rejection workflows, validation, pagination, search, API resources, and a responsive dashboard frontend.",
+
+    image: LeaveDesk,
+
+    tech: [
+      "React",
+      "JavaScript",
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "JSON",
+      "CI/CD",
+    ],
+
+    github: "https://github.com/kamva-hanisi/Employee-Leave-Management-API",
+
+    live: "Present",
+  },
+
+  {
     title: "Driving School App",
 
     description:
@@ -73,6 +98,28 @@ const projects = [
     github: "https://github.com/kamva-hanisi/driving-school-app.git",
 
     live: "https://kamva-hanisi.github.io/driving-school-app/",
+  },
+
+  {
+    title: "Mini-Ecommerce-Inventory-Api",
+
+    description:
+      "Developed an Inventory Management API using Laravel and MySQL. Designed relational database schemas, implemented CRUD endpoints, search functionality, API Resources, database seeders, and authentication with Laravel Sanctum.",
+
+    image: MiniCommerce,
+
+    tech: [
+      "Blade",
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "JSON",
+      "CI/CD",
+    ],
+
+    github: "https://github.com/kamva-hanisi/mini-ecommerce-inventory-api",
+
+    live: "Present",
   },
 
   {
