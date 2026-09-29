@@ -4,7 +4,7 @@ import techStack, { education } from "../data/techStack";
 
 function TechStack() {
   return (
-    <section className="py-24 px-6 bg-slate-900">
+    <section id="skills" className="py-24 px-6 bg-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -15,7 +15,8 @@ function TechStack() {
           <h2 className="text-4xl md:text-5xl font-bold">Tech Stack</h2>
 
           <p className="text-gray-400 mt-4 text-lg">
-            Technologies and tools I use to build modern web applications.
+            The technologies I use across interfaces, APIs, databases, version
+            control, and deployment.
           </p>
         </motion.div>
 

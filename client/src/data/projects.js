@@ -5,6 +5,7 @@ import drivingSchool from "../assets/Driving.png";
 import nestwise from "../assets/NestWise.png";
 import LeaveDesk from "../assets/LeaveDesk.png";
 import MiniCommerce from "../assets/Mini-E Commerce.png"
+import forgeAndFade from "../assets/Forge-And-Fade.png";
 
 const projects = [
   {
@@ -34,12 +35,13 @@ const projects = [
     title: "Expense Tracker",
 
     description:
-      "Developed a full-stack expense management application featuring secure authentication, interactive dashboards, category management, monthly summaries, Redux state management, RESTful APIs, and responsive user interfaces.",
+      "Built a full-stack expense management application with user registration and login secured by JWT authentication, protected endpoints for creating, reading, updating, and deleting transactions, and summaries for income, expenses, balance, and transaction counts. The responsive frontend includes search, category filtering, financial dashboards, and charts, while the API automatically sets up the required PostgreSQL tables on startup.",
 
     image: expenseTracker,
 
     tech: [
       "React",
+      "TypeScript",
       "JavaScript",
       "Node.js",
       "Express",
@@ -52,6 +54,31 @@ const projects = [
     github: "https://github.com/kamva-hanisi/Expense-Tracker-App.git",
 
     live: "https://kamva-hanisi.github.io/Expense-Tracker-App/",
+  },
+
+  {
+    title: "Forge & Fade",
+
+    description:
+      "Forge & Fade is a modern full-stack barbershop website built to make discovering services and booking an appointment simple.",
+
+    image: forgeAndFade,
+
+    tech: [
+      "React 19",
+      "Vite",
+      "SASS",
+      "Axios",
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "JavaScript",
+      "Blade",
+    ],
+
+    github: "https://github.com/kamva-hanisi/Forge-And-Fade.git",
+
+    live: "https://kamva-hanisi.github.io/Forge-And-Fade/",
   },
 
   {
@@ -74,7 +101,7 @@ const projects = [
 
     github: "https://github.com/kamva-hanisi/Employee-Leave-Management-API",
 
-    live: "Present",
+    live: null,
   },
 
   {
@@ -119,7 +146,7 @@ const projects = [
 
     github: "https://github.com/kamva-hanisi/mini-ecommerce-inventory-api",
 
-    live: "Present",
+    live: null,
   },
 
   {
@@ -157,7 +184,7 @@ const projects = [
 
     github: "https://github.com/kamva-hanisi/NestWise-Properties.git",
 
-    live: "#",
+    live: null,
   },
 ];
 

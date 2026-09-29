@@ -13,21 +13,18 @@ function About() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
 
           <p className="text-gray-400 leading-relaxed text-lg">
-            I'm a Johannesburg-based Full-Stack Developer with experience
-            building scalable, production-ready web applications from the ground
-            up. I specialize in React.js, Angular, Vue.js, JavaScript, TypeScript, Node.js,
-            Express.js, PHP, Laravel, Redux, Tailwind CSS, and PostgreSQL, with a strong focus
-            on clean user interfaces, RESTful APIs, database design, and
-            maintainable backend architecture.
+            I'm a Full-Stack Developer based in Johannesburg who enjoys turning
+            practical ideas into complete web applications. I'm open to remote
+            opportunities worldwide, hybrid or on-site roles across South
+            Africa, and relocation for the right opportunity.
           </p>
 
           <p className="text-gray-400 leading-relaxed text-lg mt-6">
-            I have developed full-stack projects including a task management
-            application, an expense tracker, and a driving school booking
-            system. These projects include features such as authentication,
-            category-based dashboards, booking availability logic, PostgreSQL
-            data storage, API integration, and deployment on Vercel, Neon and
-            Github.
+            I work across the stack, creating clear interfaces, secure REST
+            APIs, and well-structured relational databases. My projects include
+            financial dashboards, booking platforms, inventory systems, and
+            employee-management tools with authentication, validation, search,
+            reporting, and cloud deployment.
           </p>
         </motion.div>
 
@@ -39,29 +36,29 @@ function About() {
           className="grid grid-cols-1 sm:grid-cols-2 gap-6"
         >
           <div className="bg-slate-800 p-6 rounded-2xl">
-            <h3 className="text-cyan-400 text-3xl font-bold">5+</h3>
+            <h3 className="text-cyan-400 text-3xl font-bold">8</h3>
 
             <p className="text-gray-400 mt-2">Projects Built</p>
           </div>
 
           <div className="bg-slate-800 p-6 rounded-2xl">
-            <h3 className="text-cyan-400 text-3xl font-bold">React</h3>
+            <h3 className="text-cyan-400 text-3xl font-bold">Full Stack</h3>
 
-            <p className="text-gray-400 mt-2">Frontend Development</p>
+            <p className="text-gray-400 mt-2">Frontend + Backend</p>
           </div>
 
           <div className="bg-slate-800 p-6 rounded-2xl">
-            <h3 className="text-cyan-400 text-3xl font-bold">Node.js</h3>
+            <h3 className="text-cyan-400 text-3xl font-bold">REST APIs</h3>
 
-            <p className="text-gray-400 mt-2">Backend APIs</p>
+            <p className="text-gray-400 mt-2">Secure API Design</p>
           </div>
 
           <div className="bg-slate-800 p-6 rounded-2xl">
             <h3 className="text-cyan-400 text-2xl sm:text-3xl font-bold">
-              PostgreSQL
+              SQL
             </h3>
 
-            <p className="text-gray-400 mt-2">Database Systems</p>
+            <p className="text-gray-400 mt-2">PostgreSQL + MySQL</p>
           </div>
         </motion.div>
       </div>

@@ -1,14 +1,29 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
+import { FiArrowRight, FiExternalLink, FiX } from "react-icons/fi";
 
 import projects from "../data/projects";
 import { skillIcons } from "../data/techStack";
 
 function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    if (!selectedProject) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") setSelectedProject(null);
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [selectedProject]);
+
   return (
-    <section id="projects" className="py-24 px-6 bg-slate-950">
-      <div className="max-w-7xl mx-auto">
+    <>
+      <section id="projects" className="py-24 px-6 bg-slate-950">
+        <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -19,7 +34,7 @@ function Projects() {
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid auto-rows-fr items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <motion.div
               key={project.title}
@@ -42,6 +57,7 @@ function Projects() {
                 shadow-lg
                 flex
                 flex-col
+                h-full
                 overflow-hidden
               "
             >
@@ -79,22 +95,35 @@ function Projects() {
                     <FaGithub />
                   </a>
 
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-cyan-400 transition"
-                    aria-label={`${project.title} live project`}
-                  >
-                    <FiExternalLink />
-                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-cyan-400 transition"
+                      aria-label={`${project.title} live project`}
+                    >
+                      <FiExternalLink />
+                    </a>
+                  )}
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-gray-400 leading-relaxed mb-6">
-                {project.description}
-              </p>
+              <div className="mb-6">
+                <p className="text-gray-400 leading-relaxed line-clamp-3 min-h-[4.5rem]">
+                  {project.description}
+                </p>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedProject(project)}
+                  className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors"
+                >
+                  Learn more
+                  <FiArrowRight aria-hidden="true" />
+                </button>
+              </div>
 
               {/* Tech */}
               <div className="flex flex-wrap gap-3 mt-auto">
@@ -130,9 +159,76 @@ function Projects() {
               </div>
             </motion.div>
           ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 grid place-items-center bg-slate-950/80 px-6 py-10 backdrop-blur-sm"
+            onClick={() => setSelectedProject(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.98 }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-details-title"
+              className="relative w-full max-w-2xl rounded-lg border border-white/10 bg-slate-900 p-6 shadow-2xl md:p-8"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedProject(null)}
+                className="absolute right-4 top-4 grid size-10 place-items-center rounded-full text-gray-400 transition-colors hover:bg-white/10 hover:text-white"
+                aria-label="Close project details"
+              >
+                <FiX className="text-xl" />
+              </button>
+
+              <h3
+                id="project-details-title"
+                className="pr-12 text-2xl font-bold md:text-3xl"
+              >
+                {selectedProject.title}
+              </h3>
+
+              <p className="mt-5 leading-relaxed text-gray-300">
+                {selectedProject.description}
+              </p>
+
+              <div className="mt-7 flex gap-3">
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md border border-white/15 px-4 py-2 font-semibold transition-colors hover:border-cyan-400 hover:text-cyan-300"
+                >
+                  <FaGithub />
+                  GitHub
+                </a>
+                {selectedProject.live && (
+                  <a
+                    href={selectedProject.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-md bg-cyan-500 px-4 py-2 font-semibold text-slate-950 transition-colors hover:bg-cyan-400"
+                  >
+                    <FiExternalLink />
+                    Live project
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 

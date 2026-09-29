@@ -66,10 +66,10 @@ function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">Contact Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold">Let's Work Together</h2>
 
           <p className="text-gray-400 mt-4 text-lg">
-            Have a project or opportunity? Let's connect.
+            Have a role, project, or collaboration in mind? Send me a message.
           </p>
         </motion.div>
 

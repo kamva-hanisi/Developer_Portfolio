@@ -30,6 +30,7 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVercel,
+  SiVite,
 } from "react-icons/si";
 import { VscCopilot } from "react-icons/vsc";
 
@@ -38,6 +39,7 @@ const publicAsset = (fileName) => `${import.meta.env.BASE_URL}${fileName}`;
 export const skillIcons = {
   API: { icon: FaCode, color: "#22d3ee" },
   Axios: { icon: SiAxios, color: "#5a29e4" },
+  Blade: { icon: SiLaravel, color: "#ff2d20" },
   CODEX: { icon: FaCode, color: "#22d3ee" },
   Copilot: { icon: VscCopilot, color: "#a78bfa" },
   CSS: { icon: FaCss3Alt, color: "#1572b6" },
@@ -69,6 +71,7 @@ export const skillIcons = {
   PostgreSQL: { icon: SiPostgresql, color: "#4169e1" },
   Postman: { icon: SiPostman, color: "#ff6c37" },
   React: { icon: FaReact, color: "#61dafb" },
+  "React 19": { icon: FaReact, color: "#61dafb" },
   "React.js": { icon: FaReact, color: "#61dafb" },
   "Cursor Icon": { icon: FaICursor, color: "#22d3ee" },
   Redux: { icon: SiRedux, color: "#764abc" },
@@ -81,6 +84,7 @@ export const skillIcons = {
   TypeScript: { icon: SiTypescript, color: "#3178c6" },
   "Query Optimization": { icon: FaCode, color: "#f59e0b" },
   Vercel: { icon: SiVercel, color: "#ffffff" },
+  Vite: { icon: SiVite, color: "#646cff" },
   "VS Code": { icon: FaVsCode, color: "#007acc" },
 };
 
