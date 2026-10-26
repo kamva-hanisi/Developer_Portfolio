@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaDownload, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-scroll";
 
 function Hero() {
+  const cvUrl = `${import.meta.env.BASE_URL}Kamva_Hanisi_Full-Stack_CV_2026.pdf`;
+
   return (
     <section
       id="home"
@@ -96,6 +98,15 @@ function Hero() {
           >
             <FaLinkedin aria-hidden="true" />
             LinkedIn
+          </a>
+
+          <a
+            href={cvUrl}
+            download="Kamva_Hanisi_Full-Stack_CV_2026.pdf"
+            className="inline-flex items-center gap-2 border border-slate-700 px-8 py-4 rounded-2xl font-semibold transition hover:border-cyan-400 hover:bg-cyan-500/10"
+          >
+            <FaDownload aria-hidden="true" />
+            Download CV
           </a>
 
           <Link
