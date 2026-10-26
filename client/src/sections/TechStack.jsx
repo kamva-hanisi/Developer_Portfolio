@@ -85,7 +85,9 @@ function TechStack() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-10"
           >
-            <h2 className="text-4xl md:text-5xl font-bold">Education</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Education & Professional Development
+            </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
@@ -118,11 +120,17 @@ function TechStack() {
                     py-2
                   "
                 >
-                  <img
-                    src={item.logo}
-                    alt={`${item.school} logo`}
-                    className="w-14 h-14 rounded-full object-contain p-1 border border-cyan-400/30 bg-slate-800"
-                  />
+                  {item.logo ? (
+                    <img
+                      src={item.logo}
+                      alt={`${item.school} logo`}
+                      className="w-14 h-14 rounded-full object-contain p-1 border border-cyan-400/30 bg-slate-800"
+                    />
+                  ) : (
+                    <div className="grid size-14 place-items-center rounded-full border border-cyan-400/30 bg-slate-800 text-lg font-bold text-cyan-300">
+                      {item.school.slice(0, 1)}
+                    </div>
+                  )}
 
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold">

@@ -12,7 +12,7 @@ const projects = [
     title: "Task Manager",
 
     description:
-      "Developed a full-stack task management platform featuring JWT authentication, CRUD operations, PostgreSQL data persistence, responsive design, RESTful APIs, and complete frontend-backend integration.",
+      "Built a full-stack task management application with a responsive React interface, JWT authentication, password reset functionality, task CRUD operations, Node.js API functionality through Vercel Functions, PostgreSQL persistence, and complete frontend-backend integration.",
 
     image: taskManager,
 
@@ -23,6 +23,7 @@ const projects = [
       "Express",
       "SASS",
       "PostgreSQL",
+      "Vercel",
       "CI/CD",
     ],
 
@@ -46,7 +47,7 @@ const projects = [
       "Node.js",
       "Express",
       "tailwindcss",
-      "Redux",
+      "Redux Toolkit",
       "PostgreSQL",
       "CI/CD",
     ],
@@ -60,7 +61,7 @@ const projects = [
     title: "Forge & Fade",
 
     description:
-      "Forge & Fade is a modern full-stack barbershop website built to make discovering services and booking an appointment simple.",
+      "Developed a full-stack barbershop booking application with a responsive React frontend and Laravel RESTful API, including appointment availability, booking validation, customer enquiries, and database operations through Eloquent ORM.",
 
     image: forgeAndFade,
 
@@ -71,6 +72,7 @@ const projects = [
       "Axios",
       "PHP",
       "Laravel",
+      "Eloquent ORM",
       "MySQL",
       "JavaScript",
       "Blade",

@@ -6,6 +6,7 @@ import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import TechStack from "./sections/TechStack";
+import Experience from "./sections/Experience";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <Hero />
 
       <About />
+
+      <Experience />
 
       <TechStack />
 

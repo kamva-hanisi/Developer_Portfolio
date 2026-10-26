@@ -13,10 +13,11 @@ function About() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
 
           <p className="text-gray-400 leading-relaxed text-lg">
-            I'm a Full-Stack Developer based in Johannesburg who enjoys turning
-            practical ideas into complete web applications. I'm open to remote
-            opportunities worldwide, hybrid or on-site roles across South
-            Africa, and relocation for the right opportunity.
+            I'm a Full-Stack Developer based in Johannesburg with 3+ years of
+            professional experience building and maintaining production web
+            applications. I'm open to remote opportunities worldwide, hybrid
+            or on-site roles across South Africa, and relocation for the right
+            opportunity.
           </p>
 
           <p className="text-gray-400 leading-relaxed text-lg mt-6">
@@ -24,7 +25,8 @@ function About() {
             APIs, and well-structured relational databases. My projects include
             financial dashboards, booking platforms, inventory systems, and
             employee-management tools with authentication, validation, search,
-            reporting, and cloud deployment.
+            reporting, testing, code review, and cloud deployment in Agile
+            teams.
           </p>
         </motion.div>
 
@@ -36,9 +38,9 @@ function About() {
           className="grid grid-cols-1 sm:grid-cols-2 gap-6"
         >
           <div className="bg-slate-800 p-6 rounded-2xl">
-            <h3 className="text-cyan-400 text-3xl font-bold">8</h3>
+            <h3 className="text-cyan-400 text-3xl font-bold">3+ Years</h3>
 
-            <p className="text-gray-400 mt-2">Projects Built</p>
+            <p className="text-gray-400 mt-2">Professional Experience</p>
           </div>
 
           <div className="bg-slate-800 p-6 rounded-2xl">

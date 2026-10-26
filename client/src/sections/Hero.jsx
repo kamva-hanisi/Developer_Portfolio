@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-scroll";
 
 function Hero() {
@@ -36,9 +36,9 @@ function Hero() {
           transition={{ duration: 1 }}
           className="mt-6 text-gray-400 text-lg md:text-xl leading-relaxed"
         >
-          Full-Stack Developer building secure, responsive web applications
-          from polished frontend experiences to REST APIs and relational
-          databases.
+          Full-Stack Developer with 3+ years of professional experience
+          building secure, responsive web applications from polished frontend
+          experiences to REST APIs and relational databases.
         </motion.p>
 
         <motion.p
@@ -86,6 +86,16 @@ function Hero() {
           >
             <FaGithub aria-hidden="true" />
             GitHub
+          </a>
+
+          <a
+            href="https://linkedin.com/in/kamva-hanisi/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 border border-slate-700 px-8 py-4 rounded-2xl font-semibold transition hover:border-cyan-400 hover:bg-cyan-500/10"
+          >
+            <FaLinkedin aria-hidden="true" />
+            LinkedIn
           </a>
 
           <Link
