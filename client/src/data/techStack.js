@@ -180,6 +180,16 @@ const techStack = [
 
 export const education = [
   {
+    school: "Udemy",
+    program: "Ultimate AWS Certified Cloud Practitioner (CLF-C02)",
+    period: "Completed 2026",
+  },
+  {
+    school: "Udemy",
+    program: "AI & AI-Assisted Software Development",
+    period: "Completed 2026",
+  },
+  {
     school: "ALX Africa",
     program: "Software Engineering",
     period: "2023 - 2024",
@@ -193,16 +203,6 @@ export const education = [
     program: "School",
     period: "2015 - 2020",
     logo: publicAsset("School.svg"),
-  },
-  {
-    school: "Udemy",
-    program: "Ultimate AWS Certified Cloud Practitioner (CLF-C02)",
-    period: "Completed 2026",
-  },
-  {
-    school: "Udemy",
-    program: "AI & AI-Assisted Software Development",
-    period: "Completed 2026",
   },
 ];
 
